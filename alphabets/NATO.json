@@ -1,8 +1,9 @@
 {
   "__comment": "This is a spelling alphabet file in JSON format",
 
-  "name": "NATO alphabet",
-  "description": "This is the NATO spelling alphabet",
+  "name": "NATO phonetic alphabet",
+  "description": "The NATO phonetic alphabet, also known as International Radiotelephony Spelling Alphabet, is the most widely used spelling alphabet.",
+  "url": "http://en.wikipedia.org/wiki/NATO_phonetic_alphabet",
   "author": "Philipp Klaus",
 
   "letters": {
