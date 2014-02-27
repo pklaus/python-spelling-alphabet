@@ -39,6 +39,8 @@ def load_alphabet(fp):
     for letter in alphabet["letters"]:
         letters_lower[letter.lower()] = alphabet["letters"][letter]
     alphabet["letters"].update(letters_lower)
+    if "additional_letters" in alphabet:
+        alphabet["letters"].update(alphabet["additional_letters"])
     return alphabet
 
 def main():

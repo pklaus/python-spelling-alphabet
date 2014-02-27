@@ -33,5 +33,14 @@
     "X": "X-ray",
     "Y": "Yankee",
     "Z": "Zulu"
+  },
+
+  "additional_letters": {
+    " ": "space",
+    ".": "dot",
+    ",": "comma",
+    ":": "colon",
+    ";": "semicolon",
+    "@": "at"
   }
 }
