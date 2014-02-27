@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # spell.py - spelling alphabet for Python
 
@@ -53,8 +53,8 @@ def main():
     args = parser.parse_args()
 
     try:
-	with open('alphabets/{}.json'.format(args.alphabet)) as f:
-            alphabet = load_alphabet(f)
+        with open('alphabets/{}.json'.format(args.alphabet), encoding="utf-8") as f:
+           alphabet = load_alphabet(f)
     except:
         raise
         parser.error("Sorry, I don't trust the alphabet file.")

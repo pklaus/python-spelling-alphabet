@@ -10,7 +10,7 @@ in order to support different languages.
 
 ### Requirements
 
-You need Python (2 or 3) to run this program.
+You need Python 3 to run this program.
 It uses JSON to load the different spelling alphabets.
 
 ### Usage
