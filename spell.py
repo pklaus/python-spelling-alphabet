@@ -44,7 +44,7 @@ def load_alphabet(fp):
 def main():
     parser = argparse.ArgumentParser(description='Spelling words for you.')
     parser.add_argument('words', metavar='WORD', nargs='+',
-                       help='an integer for the accumulator')
+                       help='The word or words you want to be spelled.')
     parser.add_argument('-a', '--alphabet', default="NATO",
                        help='The spelling alphabet to use (NATO).')
     parser.add_argument('-u', '--upper', action='store_true',
@@ -60,7 +60,7 @@ def main():
         parser.error("Sorry, I don't trust the alphabet file.")
 
     for word in args.words:
-        print("Spelling  {}  with the {} alphabet:".format(word, args.alphabet))
+        print('Spelling  "{}"  with the {} alphabet:'.format(word, args.alphabet))
         spell(word, alphabet, mark_uppercase=args.upper)
 
 if __name__ == "__main__":
