@@ -1,0 +1,50 @@
+{
+  "__comment": "This is a spelling alphabet file in JSON format",
+
+  "name": "Alphabet téléphonique français",
+  "name_en": "French Spelling Alphabet",
+  "description": "L'alphabet téléphonique français est un alphabet radio utilisé au téléphone en France.",
+  "description_en": "French spelling alphabet",
+  "url": "http://fr.wikipedia.org/wiki/Alphabet_t%C3%A9l%C3%A9phonique_fran%C3%A7ais",
+  "author": "Philipp Klaus",
+
+  "letters": {
+    "A" : "Anatole",
+    "B" : "Berthe",
+    "C" : "Célestin",
+    "D" : "Désiré",
+    "E" : "Eugène",
+    "F" : "François",
+    "G" : "Gaston",
+    "H" : "Henri",
+    "I" : "Irma",
+    "J" : "Joseph",
+    "K" : "Kléber",
+    "L" : "Louis",
+    "M" : "Marcel",
+    "N" : "Nicolas",
+    "O" : "Oscar",
+    "P" : "Pierre",
+    "Q" : "Quintal",
+    "R" : "Raoul",
+    "S" : "Suzanne",
+    "T" : "Thérèse",
+    "U" : "Ursule",
+    "V" : "Victor",
+    "W" : "William",
+    "X" : "Xavier",
+    "Y" : "Yvonne",
+    "Z" : "Zoé"
+  },
+
+  "additional_letters": {
+    "__comment" : "These letters are not officially in the spelling alphabet but they may be useful for dictation.",
+    " "   :  "espace",
+    "."   :  "point",
+    ","   :  "virgule",
+    ";"   :  "point-virgule",
+    ":"   :  "deux-points",
+    "@"   :  "arobase"
+  }
+}
+
