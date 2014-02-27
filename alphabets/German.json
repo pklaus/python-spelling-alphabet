@@ -1,0 +1,58 @@
+{
+  "__comment": "This is a spelling alphabet file in JSON format",
+
+  "name": "Deutsches Buchstabier-Alphabet",
+  "name_en": "German Spelling Alphabet",
+  "description": "Deutsches Buchstabier-Alphabet nach DIN 5009",
+  "description_en": "German spelling alphabet",
+  "url": "http://de.wikipedia.org/wiki/Buchstabiertafel",
+  "author": "Philipp Klaus",
+
+  "letters": {
+    "A"   :  "Anton",
+    "Ä"   :  "Ärger",
+    "B"   :  "Berta",
+    "C"   :  "Cäsar",
+    "Ch"  :  "Charlotte",
+    "D"   :  "Dora",
+    "E"   :  "Emil",
+    "F"   :  "Friedrich",
+    "G"   :  "Gustav",
+    "H"   :  "Heinrich",
+    "I"   :  "Ida",
+    "J"   :  "Joseph Julius",
+    "K"   :  "Kaufmann",
+    "L"   :  "Ludwig",
+    "M"   :  "Martha",
+    "N"   :  "Nordpol",
+    "O"   :  "Otto",
+    "Ö"   :  "Ökonom",
+    "P"   :  "Paula",
+    "Q"   :  "Quelle",
+    "R"   :  "Richard",
+    "S"   :  "Samuel",
+    "Sch" :  "Schule",
+    "ß"   :  "Eszett",
+    "T"   :  "Theodor",
+    "U"   :  "Ulrich",
+    "Ü"   :  "Übermut",
+    "V"   :  "Viktor",
+    "W"   :  "Wilhelm",
+    "X"   :  "Xanthippe",
+    "Y"   :  "Ypsilon",
+    "Z"   :  "Zacharias"
+  },
+
+  "additional_letters": {
+    "__comment" : "These letters are not officially in the spelling alphabet but they may be useful for dictation.",
+    " "   :  "Leerzeichen",
+    "."   :  "Punkt",
+    ","   :  "Komma",
+    ";"   :  "Strichpunkt",
+    ":"   :  "Doppelpunkt",
+    "@"   :  "@-Symbol",
+    "("   :  "Klammer auf",
+    ")"   :  "Klammer zu"
+  }
+}
+
