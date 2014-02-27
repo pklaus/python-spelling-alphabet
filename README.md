@@ -18,6 +18,47 @@ It uses JSON to load the different spelling alphabets.
 `spell.py` is a command line tool. You simply provide the words that
 you want to have spelled as arguments.
 
+#### Examples
+
+`./spell.py -a French Benoit` will output:
+
+> Spelling  "Benoit"  with the French alphabet:  
+> B - Berthe  
+> e - Eugène  
+> n - Nicolas  
+> o - Oscar  
+> i - Irma  
+> t - Thérèse
+
+`./spell.py -a German Russe` will output:
+
+> Spelling  "Russe"  with the German alphabet:  
+> R - Richard  
+> u - Ulrich  
+> s - Samuel  
+> s - Samuel  
+> e - Emil
+
+`./spell.py -u -a NATO Phil@example.com` will output:
+
+> Spelling  "Phil@example.com"  with the NATO alphabet:  
+> P - Upper Case Papa  
+> h - Hotel  
+> i - India  
+> l - Lima  
+> @ - at  
+> e - Echo  
+> x - X-ray  
+> a - Alpha  
+> m - Mike  
+> p - Papa  
+> l - Lima  
+> e - Echo  
+> . - dot  
+> c - Charlie  
+> o - Oscar  
+> m - Mike
+
 ### License
 
 > This program is free software: you can redistribute it and/or modify
