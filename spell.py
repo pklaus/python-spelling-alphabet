@@ -18,30 +18,52 @@
 import argparse
 import json
 
+
+class Alphabet(object):
+    def __init__(self):
+        self.name = ""
+        self.description = ""
+        self.letters = dict()
+        self.additional_letters = dict()
+
+    def from_JSON(self, fp):
+        a = json.load(fp)
+        assert(type(a) == dict)
+        assert("name" in a)
+        assert("letters" in a)
+        assert(type(a["letters"]) == dict)
+
+        if("description" in a):
+            self.description = a["description"]
+        self.name = a["name"]
+
+        # The letters are inserted into the dictionary as lower case letters:
+        for letter in a["letters"]:
+            self.letters[letter.lower()] = a["letters"][letter]
+
+        if( ("additional_letters" in a) and (type(a["additional_letters"]) == dict)):
+            self.additional_letters = a["additional_letters"]
+
+    def has(self, letter):
+        letter = letter.lower()
+        return letter in self.letters or letter in self.additional_letters
+
+    def get(self, letter):
+        letter = letter.lower()
+        if letter in self.letters:
+            return self.letters[letter]
+        if letter in self.additional_letters:
+            return self.additional_letters[letter]
+
 def spell(word, alphabet, mark_uppercase=False):
     for letter in word:
-        if letter in alphabet["letters"]:
+        if alphabet.has(letter):
             if mark_uppercase and letter.isupper():
-                print("{} - Upper Case {}".format(letter, alphabet["letters"][letter]))
+                print("{} - Upper Case {}".format(letter, alphabet.get(letter)))
             else:
-                print("{} - {}".format(letter, alphabet["letters"][letter]))
+                print("{} - {}".format(letter, alphabet.get(letter)))
         else:
             print("{} - {}".format(letter, letter))
-
-def load_alphabet(fp):
-    alphabet = json.load(fp)
-    assert(alphabet["name"])
-    assert(alphabet["letters"])
-    assert(type(alphabet["letters"]) == dict)
-    # Now we insert the lower case letters to our dictionary.
-    # They are left out in the JSON file to make it more readable.
-    letters_lower = dict()
-    for letter in alphabet["letters"]:
-        letters_lower[letter.lower()] = alphabet["letters"][letter]
-    alphabet["letters"].update(letters_lower)
-    if "additional_letters" in alphabet:
-        alphabet["letters"].update(alphabet["additional_letters"])
-    return alphabet
 
 def main():
     parser = argparse.ArgumentParser(description='Spelling words for you.')
@@ -54,12 +76,13 @@ def main():
     
     args = parser.parse_args()
 
+    alphabet = Alphabet()
+    alphabet_filename = 'alphabets/{}.json'.format(args.alphabet)
     try:
-        with open('alphabets/{}.json'.format(args.alphabet), encoding="utf-8") as f:
-           alphabet = load_alphabet(f)
+        with open(alphabet_filename, encoding="utf-8") as f:
+            alphabet.from_JSON(f)
     except:
-        raise
-        parser.error("Sorry, I don't trust the alphabet file.")
+        parser.error("Sorry, couldn't load the alphabet file {}.".format(alphabet_filename))
 
     for word in args.words:
         print('Spelling  "{}"  with the {} alphabet:'.format(word, args.alphabet))
@@ -67,3 +90,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
